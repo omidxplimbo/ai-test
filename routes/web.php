@@ -11,8 +11,8 @@ Route::get('/', function () {
 
 Route::get('/health', [HealthCheckController::class, 'index']);
 
+Route::get('/omid', [OmidController::class, 'index']);
+
 Route::post('/task', [TaskController::class, 'store'])
     ->middleware('task.pass-through')
     ->name('task.store');
-
-Route::get('/omid', [OmidController::class, 'index']);
